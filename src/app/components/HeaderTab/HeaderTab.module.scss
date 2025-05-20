@@ -1,0 +1,23 @@
+@use 'mixins' as *;
+
+.headerTabWrapper {
+    display: flex;
+    padding: 1rem;
+    overflow-x: auto;
+    gap: 30px;
+    white-space: nowrap;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.tabItem {
+    flex: 0 0 auto;
+    cursor: pointer;
+
+    &.cur {
+        color: red;
+    }
+}
+
