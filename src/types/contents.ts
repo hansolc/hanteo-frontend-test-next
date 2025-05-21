@@ -1,7 +1,13 @@
-type ContentsKey = 'charts' | 'whook' | 'events' | 'news' | 'stores' | 'charge';
+type ContentsTabs =
+  | 'charts'
+  | 'whook'
+  | 'events'
+  | 'news'
+  | 'stores'
+  | 'charge';
 
 interface ContentsRequestType {
-  key: ContentsKey;
+  tab: ContentsTabs;
   limit?: number;
   skip?: number;
 }
@@ -14,4 +20,4 @@ interface ContentsInfo {
   artist: string;
 }
 
-export type { ContentsKey, ContentsRequestType, ContentsInfo };
+export type { ContentsTabs, ContentsRequestType, ContentsInfo };

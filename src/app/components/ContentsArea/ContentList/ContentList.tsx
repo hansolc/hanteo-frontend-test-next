@@ -1,7 +1,8 @@
+import { ContentsListResponse } from '@/schema/contents';
 import styles from './ContentList.module.scss';
 
 interface ContentListProps {
-  listInfo: any;
+  listInfo: ContentsListResponse['contents'];
 }
 
 const ContentList = ({ listInfo }: ContentListProps) => {
