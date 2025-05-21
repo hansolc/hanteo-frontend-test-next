@@ -1,10 +1,10 @@
-import Button from '@/components/Button/Button';
+import Wrapper from '@/components/Wrapper/Wrapper';
+import ClientHome from './components/ClientHome/ClientHome';
 
 export default function Home() {
   return (
-    <div>
-      hellow wrold
-      <Button></Button>
-    </div>
+    <Wrapper>
+      <ClientHome />
+    </Wrapper>
   );
 }

@@ -1,0 +1,30 @@
+@use 'mixins' as *;
+
+.contentListWrapper {
+    @include flex-col;
+}
+
+.contentListItemWrapper {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    > div{
+        flex-basis: 50px;
+    }
+}
+
+.ranking {
+    text-align: center;
+}
+
+.info {
+    @include flex-col;
+    flex: 1 1 0;
+    gap: 0.5rem;
+    .title {
+        font-size: 1rem;
+    }
+    .artist {
+        font-size: 1rem;
+    }
+}

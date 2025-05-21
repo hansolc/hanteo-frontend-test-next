@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "scss-types": "typed-scss-modules src --watch"
+    "scss-types": "typed-scss-modules src --watch -i src/styles"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.62.8",

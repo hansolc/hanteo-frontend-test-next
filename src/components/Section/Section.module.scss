@@ -1,0 +1,9 @@
+@use 'mixins' as *;
+
+.sectionContainer {
+    @include responsive-max-width;
+}
+
+.sectionTitle {
+    font-size: 1rem;
+}
