@@ -33,8 +33,13 @@ const ClientHome = () => {
         currentIndex={currentIndex}
         setCurrentIndex={setCurrentIndex}
       />
-      <Banner />
-      {/* <ContentsArea currentIndex={currentIndex} /> */}
+      <main>
+        <Banner />
+        <ContentsArea
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+        />
+      </main>
     </div>
   );
 };

@@ -23,23 +23,25 @@ const HeaderTab = ({ currentIndex, setCurrentIndex }: HeaderTabProps) => {
   }, [currentIndex]);
 
   return (
-    <ul className={styles.headerTabWrapper}>
-      {/* li key 변경하기! */}
-      {tabItems.map((tab, idx) => {
-        return (
-          <li
-            key={idx}
-            className={`${styles.tabItem} ${idx === currentIndex ? styles.cur : ''}`}
-            ref={(el) => {
-              itemRefs.current[idx] = el;
-            }}
-            onClick={() => setCurrentIndex(idx)}
-          >
-            {tab}
-          </li>
-        );
-      })}
-    </ul>
+    <div className={styles.headerWrapper}>
+      <ul className={styles.headerTab}>
+        {/* li key 변경하기! */}
+        {tabItems.map((tab, idx) => {
+          return (
+            <li
+              key={idx}
+              className={`${styles.tabItem} ${idx === currentIndex ? styles.cur : ''}`}
+              ref={(el) => {
+                itemRefs.current[idx] = el;
+              }}
+              onClick={() => setCurrentIndex(idx)}
+            >
+              {tab}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 

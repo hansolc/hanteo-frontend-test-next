@@ -1,4 +1,17 @@
+@use 'variables' as vars;
+
 @mixin flex-col {
     display: flex;
     flex-direction: column;
+}
+
+@mixin responsive-max-width {
+    width: 100%;
+    padding: 0 2%;
+    > * {
+          max-width: vars.$max-width-desktop;
+          width: 100%;
+          margin: 0 auto;
+          padding: 1rem;
+    }
 }
