@@ -28,7 +28,6 @@
     "eslint-plugin-prettier": "^5.2.1",
     "prettier": "^3.4.2",
     "sass": "^1.89.0",
-    "typed-scss-modules": "^8.1.1",
     "typescript": "^5"
   }
 }

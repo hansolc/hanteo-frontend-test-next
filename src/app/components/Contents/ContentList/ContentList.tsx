@@ -20,14 +20,8 @@ const ContentList = ({ listInfo, tab }: ContentListProps) => {
   }
   const ref = useRef<HTMLDivElement | null>(null);
   const { contents, limit, skip, total } = listInfo.data;
-  const {
-    data,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
-    error,
-    isFetching,
-  } = useInfiniteScrollContents({ tab, initialData: contents, limit, skip });
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, error } =
+    useInfiniteScrollContents({ tab, initialData: contents, limit, skip });
   const { observe } = useObserve({ observedCallback: fetchNextPage });
 
   useEffect(() => {
