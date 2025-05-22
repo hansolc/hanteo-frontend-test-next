@@ -1,7 +1,10 @@
 @use 'mixins' as *;
+@use 'variables' as var;
 
 .headerWrapper {
     @include responsive-max-width;
+    background-color: var.$primaryContainer;
+    color: var.$primary;
 }
 
 .headerTab {
@@ -21,7 +24,7 @@
     cursor: pointer;
 
     &.cur {
-        color: red;
+        color: var.$onPrimary;
     }
 }
 

@@ -1,20 +1,20 @@
 import React, { PropsWithChildren } from 'react';
 import styles from './Section.module.scss';
 
-/** !!!!
- * bg 타입 확보 하기
- */
 interface SectionProps {
   children: React.ReactNode;
-  bg?: 'gray' | 'white' | 'lightgray';
+  bg?: 'primary' | 'secondary' | 'tertiary';
 }
 
-const SectionRoot = ({ children, bg = 'white' }: SectionProps) => {
+const BG_CLASS_MAP = {
+  primary: styles.bgPrimary,
+  secondary: styles.bgSecondary,
+  tertiary: styles.bgTertiary,
+} as const;
+
+const SectionRoot = ({ children, bg = 'primary' }: SectionProps) => {
   return (
-    <section
-      className={styles.sectionContainer}
-      style={{ backgroundColor: bg }}
-    >
+    <section className={`${styles.sectionContainer} ${BG_CLASS_MAP[bg]}`}>
       <div>{children}</div>
     </section>
   );

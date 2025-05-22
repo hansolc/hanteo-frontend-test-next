@@ -3,7 +3,7 @@ import React from 'react';
 
 const Banner = () => {
   return (
-    <Section>
+    <Section bg="secondary">
       <div style={{ height: '200px', border: '1px solid black' }}>Banner</div>
     </Section>
   );

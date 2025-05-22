@@ -1,4 +1,5 @@
 @use 'mixins' as *;
+@use 'variables' as var;
 
 .sectionContainer {
     @include responsive-max-width;
@@ -6,4 +7,19 @@
 
 .sectionTitle {
     font-size: 1rem;
+}
+
+.bgPrimary {
+  background-color: var.$primary;
+  color: var.$onPrimary;
+}
+
+.bgSecondary {
+  background-color: var.$secondary;
+  color: var.$onSecondary;
+}
+
+.bgTertiary {
+  background-color: var.$tertiary;
+  color: var.$onTertiary;
 }
