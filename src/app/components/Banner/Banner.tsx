@@ -30,12 +30,18 @@ const Banner = () => {
       >
         {banners.map((_, idx) => (
           <Link
-            key={idx}
+            key={`banner_item_${idx}`}
             className={styles.slideItem}
             href={`/banner/${idx + 1}`}
           >
             <div className={styles.imageWrapper}>
-              <Image src={sample} fill objectFit="cover" alt="alt" />
+              <Image
+                src={sample}
+                fill
+                alt="alt"
+                className={styles.image}
+                priority
+              />
             </div>
             <div className={styles.contentWrapper}>
               <div className={styles.contentTop}>
@@ -49,6 +55,14 @@ const Banner = () => {
               </div>
             </div>
           </Link>
+        ))}
+      </div>
+      <div className={styles.dotContainer}>
+        {banners.map((_, idx) => (
+          <span
+            key={`banner_slide_dot_${idx}`}
+            className={`${styles.dot} ${index === idx ? styles.active : ''}`}
+          />
         ))}
       </div>
     </Section>

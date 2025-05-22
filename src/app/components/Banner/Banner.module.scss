@@ -1,3 +1,5 @@
+@use 'variables' as var;
+
 .slideContainer {
   display: flex;
   height: 200px;
@@ -10,15 +12,20 @@
 
 .slideItem {
   flex-basis: 90%;
-  border: 1px solid white;
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
+  overflow:hidden;
 }
 
 .imageWrapper {
   position: relative;
   flex-basis: 70%;
+  border-radius: inherit;
+}
+
+.image {
+  object-fit: cover;
 }
 
 .contentWrapper {
@@ -37,10 +44,10 @@
 }
 
 .bannerTitle {
-  white-space: nowrap;         // 줄바꿈 금지
-  overflow: hidden;            // 넘치는 텍스트 숨기기
-  text-overflow: ellipsis;     // 생략부호 '...'
-  max-width: 70%;             // 생략 기준 너비 설정 (또는 고정 너비)
+  white-space: nowrap;         
+  overflow: hidden;            
+  text-overflow: ellipsis;     
+  max-width: 70%;             
 }
 
 .bannerCTA {
@@ -52,4 +59,23 @@
   text-align: right;
   padding-top: 5px;
   font-size: 0.875rem;
+}
+
+.dotContainer {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var.$secondaryContainer;
+  transition: background-color 0.3s;
+}
+
+.active {
+  background-color: var.$onSecondaryContainer;
 }

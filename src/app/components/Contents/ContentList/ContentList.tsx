@@ -44,14 +44,6 @@ const ContentList = ({ listInfo, tab }: ContentListProps) => {
     );
   }
 
-  if (isFetching) {
-    return (
-      <div className={styles.minwidthWrapper}>
-        데이터를 가져오고 있습니다. 잠시만 기다려주세요
-      </div>
-    );
-  }
-
   return (
     <>
       <div className={styles.contentListWrapper}>
