@@ -4,6 +4,8 @@ import Section from '@/components/Section/Section';
 import React, { useEffect, useState } from 'react';
 import styles from './Banner.module.scss';
 import Image from 'next/image';
+import sample from '/public/sample.jpg';
+import Link from 'next/link';
 
 const banners = ['배너 1', '배너 2', '배너 3'];
 
@@ -27,9 +29,13 @@ const Banner = () => {
         }}
       >
         {banners.map((_, idx) => (
-          <div key={idx} className={styles.slideItem}>
+          <Link
+            key={idx}
+            className={styles.slideItem}
+            href={`/banner/${idx + 1}`}
+          >
             <div className={styles.imageWrapper}>
-              <Image src="/sample.jpg" fill objectFit="cover" alt="alt" />
+              <Image src={sample} fill objectFit="cover" alt="alt" />
             </div>
             <div className={styles.contentWrapper}>
               <div className={styles.contentTop}>
@@ -42,7 +48,7 @@ const Banner = () => {
                 2020.04.02 17:00 ~ 2020.04.02 17:00 (KST)
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </Section>

@@ -7,6 +7,7 @@ import useInfiniteScrollContents from './hooks/useInfiniteScrollContents';
 import { ContentsTabs } from '@/types/contents';
 import { useEffect, useRef } from 'react';
 import useObserve from '@/hooks/useObserver';
+import Image from 'next/image';
 
 interface ContentListProps {
   listInfo: ActionResult<ContentsListResponse>;
@@ -57,7 +58,12 @@ const ContentList = ({ listInfo, tab }: ContentListProps) => {
         {data?.pages.map((page, pageIndex) =>
           page.map((item, idx) => (
             <div key={item.id} className={styles.contentListItemWrapper}>
-              <div>{item.img}</div>
+              <Image
+                src={item.img}
+                width={50}
+                height={50}
+                alt={`img_${item.id}`}
+              />
               <div className={styles.ranking}>{item.ranking}</div>
               <div className={styles.info}>
                 <div className={styles.title}>{item.title}</div>

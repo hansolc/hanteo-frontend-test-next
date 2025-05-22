@@ -32,9 +32,9 @@ const getContentsData = ({
   return Array.from({ length: limit }, (_, idx) => {
     return {
       id: `id_${tab}_${idx + skip + 1}`,
-      img: '',
-      title: `title_${tab}${idx + skip + 1}`,
-      artist: `artist${idx + skip + 1}`,
+      img: '/sample.jpg',
+      title: `제목: ${tab}의 ${idx + skip + 1}번째 제목`,
+      artist: `서브제목: ${tab}의 ${idx + skip + 1}번째 서브제목`,
       ranking: idx + skip + 1,
     };
   });
