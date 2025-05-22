@@ -33,7 +33,7 @@ const getContentsData = ({
     return {
       id: `id_${tab}_${idx + skip + 1}`,
       img: '',
-      title: `title${idx + skip + 1}`,
+      title: `title_${tab}${idx + skip + 1}`,
       artist: `artist${idx + skip + 1}`,
       ranking: idx + skip + 1,
     };

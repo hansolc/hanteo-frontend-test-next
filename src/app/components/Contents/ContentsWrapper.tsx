@@ -1,21 +1,21 @@
 'use client';
 
 import React from 'react';
-import HeaderTab from '../HeaderTab/HeaderTab';
-import Banner from '../Banner/Banner';
-import ContentsArea from '../ContentsArea/ContentsArea';
 import { ContentsListResponse } from '@/schema/contents';
 import { useSearchParams } from 'next/navigation';
 import useSearchParamsByKeys from '@/components/SwipeWrapper/hooks/useSearchParamsByKeys';
 import { ContentsTabs } from '@/types/contents';
 import SwipeWrapper from '@/components/SwipeWrapper/SwipeWrapper';
 import { VALID_TABS } from '@/constants/tabs';
+import Section from '@/components/Section/Section';
+import { ActionResult } from '@/types/action';
+import ContentList from './ContentList/ContentList';
 
-interface ClinetHomeProps {
-  initialData: ContentsListResponse['contents'];
+interface ContentsWrapperProps {
+  initialData: ActionResult<ContentsListResponse>;
 }
 
-const ClientHome = ({ initialData }: ClinetHomeProps) => {
+const ContentsWrapper = ({ initialData }: ContentsWrapperProps) => {
   const searchParams = useSearchParams();
   const { setParam } = useSearchParamsByKeys<{ tab: ContentsTabs }>({
     initial: {
@@ -41,16 +41,13 @@ const ClientHome = ({ initialData }: ClinetHomeProps) => {
   };
 
   return (
-    <>
-      <HeaderTab<ContentsTabs> tabs={VALID_TABS} />
-      <main>
-        <Banner />
-        <SwipeWrapper onSwipeLeft={onSwipeLeft} onSwipeRight={onSwipeRight}>
-          <ContentsArea listInfo={initialData} />
-        </SwipeWrapper>
-      </main>
-    </>
+    <SwipeWrapper onSwipeLeft={onSwipeLeft} onSwipeRight={onSwipeRight}>
+      <Section bg="lightgray">
+        <Section.Title>콘텐츠 큐레이션 제목</Section.Title>
+        <ContentList listInfo={initialData} />
+      </Section>
+    </SwipeWrapper>
   );
 };
 
-export default ClientHome;
+export default ContentsWrapper;
