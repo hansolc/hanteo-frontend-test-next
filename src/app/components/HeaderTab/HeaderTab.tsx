@@ -2,10 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import styles from './HeaderTab.module.scss';
-import { SwipeIndexProps } from '../types';
-import { ContentsTabs } from '@/types/contents';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import useSearchParamsByKeys from '@/components/SwipeWrapper/hooks/useSearchParamsByKeys';
 
 interface HeaderTabProps<T extends string> {
   tabs: T[];

@@ -1,17 +1,8 @@
+import { ContentsListResponse } from '@/schema/contents';
+import { ContentsTabs } from '@/types/contents';
 import { NextRequest, NextResponse } from 'next/server';
 
-export type ContentsType = {
-  keys: 'charts' | 'whook' | 'events' | 'news' | 'stores' | 'charge';
-  contentsInfo: {
-    id: string;
-    img: string;
-    ranking: number;
-    title: string;
-    artist: string;
-  };
-};
-
-const contentsTypeObj: Record<ContentsType['keys'], []> = {
+const contentsTypeObj: Record<ContentsTabs, []> = {
   charts: [],
   whook: [],
   events: [],
@@ -28,7 +19,7 @@ const getContentsData = ({
   limit: number;
   skip: number;
   tab?: string;
-}): Array<ContentsType['contentsInfo']> => {
+}): ContentsListResponse['contents'] => {
   return Array.from({ length: limit }, (_, idx) => {
     return {
       id: `id_${tab}_${idx + skip + 1}`,

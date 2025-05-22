@@ -11,7 +11,7 @@ export interface SwipeProps {
 const useSwipe = ({
   onSwipeLeft,
   onSwipeRight,
-  threshold = 50,
+  threshold = 100,
 }: SwipeProps) => {
   const touchStartX = useRef<number | null>(null);
 
