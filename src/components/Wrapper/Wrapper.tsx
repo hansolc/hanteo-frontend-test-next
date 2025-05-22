@@ -1,8 +1,8 @@
 import React, { PropsWithChildren } from 'react';
-import { wrapper } from './Wrapper.module.scss';
+import styles from './Wrapper.module.scss';
 
 const Wrapper = ({ children }: PropsWithChildren) => {
-  return <div className={wrapper}>{children}</div>;
+  return <div className={styles.wrapper}>{children}</div>;
 };
 
 export default Wrapper;
