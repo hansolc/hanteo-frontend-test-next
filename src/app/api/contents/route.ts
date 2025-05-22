@@ -65,7 +65,11 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(result);
   } catch (error) {
     if (error instanceof Error) {
-      NextResponse.json({ error: error.message }, { status: 500 });
+      return NextResponse.json({ error: error.message }, { status: 500 });
     }
+    return NextResponse.json(
+      { error: '알 수 없는 오류입니다.' },
+      { status: 500 }
+    );
   }
 }
