@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 
-interface SwipeProps {
+export interface SwipeProps {
   onSwipeLeft?: () => void;
   onSwipeRight?: () => void;
   threshold?: number;
