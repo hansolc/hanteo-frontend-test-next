@@ -43,7 +43,7 @@ const getContentsData = ({
 export async function GET(request: NextRequest) {
   try {
     // delay for test
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
 
     const { searchParams } = new URL(request.url);
     const tab = searchParams.get('tab');
