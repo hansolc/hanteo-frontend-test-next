@@ -1,4 +1,5 @@
 @use 'mixins' as *;
+@use 'variables' as var;
 
 .contentListWrapper {
     @include flex-col;
@@ -23,9 +24,11 @@
     gap: 0.5rem;
     .title {
         font-size: 1rem;
+        font-weight: 500;
     }
     .artist {
         font-size: 1rem;
+        color: var.$inverseSurface;
     }
 }
 

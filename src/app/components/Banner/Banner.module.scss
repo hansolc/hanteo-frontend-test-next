@@ -1,0 +1,55 @@
+.slideContainer {
+  display: flex;
+  height: 200px;
+  transition: transform 0.5s ease-in-out;
+  width: 300%;
+  overflow: hidden;
+  touch-action: none;
+  gap:5px;
+}
+
+.slideItem {
+  flex-basis: 90%;
+  border: 1px solid white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrapper {
+  position: relative;
+  flex-basis: 70%;
+}
+
+.contentWrapper {
+  background-color: white;
+  flex-basis: 30%;
+  color: black;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contentTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bannerTitle {
+  white-space: nowrap;         // 줄바꿈 금지
+  overflow: hidden;            // 넘치는 텍스트 숨기기
+  text-overflow: ellipsis;     // 생략부호 '...'
+  max-width: 70%;             // 생략 기준 너비 설정 (또는 고정 너비)
+}
+
+.bannerCTA {
+  color: blue;
+  cursor: pointer;
+}
+
+.bannerDate {
+  text-align: right;
+  padding-top: 5px;
+  font-size: 0.875rem;
+}
