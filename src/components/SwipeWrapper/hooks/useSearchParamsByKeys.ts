@@ -35,7 +35,6 @@ const useSearchParamsByKeys = <T extends Record<string, string>>({
         changed = true;
       }
     }
-    console.log(params.toString());
     if (changed) {
       router.replace(`?${params.toString()}`, { scroll: false });
     }
