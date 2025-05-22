@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Noto_Sans_KR } from 'next/font/google';
 import '../styles/reset.css';
 import '../styles/global.scss';
+import ReactQueryProvider from '@/lib/tanstackquery/client';
 
 const noto = Noto_Sans_KR({
   subsets: ['latin'],
@@ -20,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${noto.className}`}>{children}</body>
+      <body className={`${noto.className}`}>
+        <ReactQueryProvider>{children}</ReactQueryProvider>
+      </body>
     </html>
   );
 }
