@@ -24,6 +24,7 @@ const useInfiniteScroll = <T>({
       pages: [initialData],
       pageParams: [0],
     },
+    staleTime: 1000,
   });
 };
 

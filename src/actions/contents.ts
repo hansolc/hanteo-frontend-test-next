@@ -2,8 +2,6 @@ import { contentListSchema, ContentsListResponse } from '@/schema/contents';
 import { ActionResult } from '@/types/action';
 import { ContentsRequestType } from '@/types/contents';
 
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export const getContentsBytab = async ({
   tab,
   limit = 30,
@@ -27,8 +25,6 @@ export const getContentsBytab = async ({
       };
     }
     const jsonData = await res.json();
-
-    // await delay(3000);
 
     const { success, data } = contentListSchema.safeParse(jsonData);
 

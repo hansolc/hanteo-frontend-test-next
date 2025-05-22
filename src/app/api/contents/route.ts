@@ -42,6 +42,8 @@ const getContentsData = ({
 
 export async function GET(request: NextRequest) {
   try {
+    // await new Promise((resolve) => setTimeout(resolve, 300));
+
     const { searchParams } = new URL(request.url);
     const tab = searchParams.get('tab');
     const limit = parseInt(searchParams.get('limit') || '30', 10);

@@ -19,8 +19,14 @@ const ContentList = ({ listInfo, tab }: ContentListProps) => {
   }
   const ref = useRef<HTMLDivElement | null>(null);
   const { contents, limit, skip, total } = listInfo.data;
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
-    useInfiniteScrollContents({ tab, initialData: contents });
+  const {
+    data,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    error,
+    isFetching,
+  } = useInfiniteScrollContents({ tab, initialData: contents, limit, skip });
   const { observe } = useObserve({ observedCallback: fetchNextPage });
 
   useEffect(() => {
@@ -28,6 +34,22 @@ const ContentList = ({ listInfo, tab }: ContentListProps) => {
       observe(ref.current);
     }
   }, [observe]);
+
+  if (error) {
+    return (
+      <div className={styles.minwidthWrapper}>
+        오류가 발생햇습니다. 다시 시도해주세요
+      </div>
+    );
+  }
+
+  if (isFetching) {
+    return (
+      <div className={styles.minwidthWrapper}>
+        데이터를 가져오고 있습니다. 잠시만 기다려주세요
+      </div>
+    );
+  }
 
   return (
     <>
@@ -47,7 +69,9 @@ const ContentList = ({ listInfo, tab }: ContentListProps) => {
       </div>
       {hasNextPage && <div ref={ref}></div>}
       {isFetchingNextPage && (
-        <div style={{ height: '100px' }}>가져오고 있습니다...</div>
+        <div style={{ height: '50px' }}>
+          데이터를 가져오고 있습니다. 잠시만 기다려주세요
+        </div>
       )}
     </>
   );
