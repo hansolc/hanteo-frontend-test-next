@@ -44,7 +44,7 @@ const ContentsWrapper = ({ initialData }: ContentsWrapperProps) => {
     <SwipeWrapper onSwipeLeft={onSwipeLeft} onSwipeRight={onSwipeRight}>
       <Section bg="lightgray">
         <Section.Title>콘텐츠 큐레이션 제목</Section.Title>
-        <ContentList listInfo={initialData} />
+        <ContentList listInfo={initialData} tab={currentTab} />
       </Section>
     </SwipeWrapper>
   );
