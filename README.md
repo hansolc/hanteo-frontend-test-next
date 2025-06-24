@@ -1,4 +1,4 @@
-# Hanteo-frontend-test
+# Next-Tabs
 
 ## 사용기술
 
